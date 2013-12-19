@@ -31,7 +31,7 @@ class MainView extends PolymerElement {
   void onEncrypt(Event event, var detail, Element target) {
     print("MainView::onEncrypt()");
 
-    encryptedMessage = alter(originalMessage, operation: (int codeUnit) => codeUnit + 1);
+    encryptedMessage = alter(originalMessage, operation: encodeCodeUnit);
   }
 
   void onDecrypt(Event event, var detail, Element target) {
