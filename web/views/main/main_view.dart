@@ -3,6 +3,9 @@ library main_view;
 import 'dart:html';
 import 'package:polymer/polymer.dart';
 
+// define the signature for the encode/decode functions
+typedef int AlterCodeUnit(int codeUnit);
+
 @CustomTag('main-view')
 class MainView extends PolymerElement {
 
@@ -40,7 +43,7 @@ class MainView extends PolymerElement {
     originalMessage = alter(encryptedMessage, operation: decodeCodeUnit);
   }
 
-  String alter(String msg, {Function operation}) => new String.fromCharCodes(msg.codeUnits.map(operation));
+  String alter(String msg, {AlterCodeUnit operation}) => new String.fromCharCodes(msg.codeUnits.map(operation));
 
   // this lets the global CSS bleed through into the Shadow DOM of this element
   bool get applyAuthorStyles => true;
