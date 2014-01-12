@@ -1,7 +1,7 @@
-name: Polymer App
+name: message_cipher
 description: A Polymer Dart application.
 dependencies:
-    polymer: any
+  polymer: any
 transformers:
 - polymer:
     entry_points: web/index.html

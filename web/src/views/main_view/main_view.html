@@ -1,14 +1,12 @@
 <polymer-element name="main-view">
   <template>
-    <link rel="stylesheet" href="../../css/main_view.css" />
-
     <h1>Message Cipher</h1>
 
-    <div id="wrapper">
+    <div id="wrapper" class="flexbox flex-justify-start">
       <div class="box-container">
         <h4>Original</h4>
         <textarea value="{{originalMessage}}"></textarea>
-        <div class="control-panel encrypt-controls">
+        <div class="control-panel flexbox flex-justify-end">
           <button class="btn btn-default" on-click="{{onEncrypt}}">Encrypt <span class="glyphicon glyphicon-arrow-right"></span></button>
         </div>
       </div>
@@ -16,7 +14,7 @@
       <div class="box-container">
         <h4>Encrypted</h4>
         <textarea value="{{encryptedMessage}}" spellcheck="false"></textarea>
-        <div class="control-panel decrypt-controls">
+        <div class="control-panel flexbox flex-justify-start">
           <button class="btn btn-default" on-click="{{onDecrypt}}"><span class="glyphicon glyphicon-arrow-left"></span> Decrypt</button>
         </div>
       </div>
