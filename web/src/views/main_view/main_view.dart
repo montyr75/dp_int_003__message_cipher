@@ -44,8 +44,5 @@ class MainView extends PolymerElement {
   }
 
   String alter(String msg, {AlterCodeUnit operation}) => new String.fromCharCodes(msg.codeUnits.map(operation));
-
-  // this lets the global CSS bleed through into the Shadow DOM of this element
-  bool get applyAuthorStyles => true;
 }
 
