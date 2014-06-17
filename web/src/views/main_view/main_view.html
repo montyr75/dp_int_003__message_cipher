@@ -1,7 +1,26 @@
+<link rel="import" href="packages/polymer/polymer.html">
+
 <polymer-element name="main-view">
   <template>
+    <link rel="stylesheet" href="../../../resources/css/app.css">
+
     <style>
-      @import "resources/css/app.css";
+      .box-container {
+        width: 475px;
+        border: 1px solid #ccc;
+        background-color: white;
+        padding: 10px;
+        margin-right: 10px;
+      }
+
+      .control-panel {
+        margin-top: 10px;
+      }
+
+      textarea {
+        width: 100%;
+        min-height: 150px;
+      }
     </style>
 
     <h1>Message Cipher</h1>
@@ -11,7 +30,7 @@
         <h4>Original</h4>
         <textarea value="{{originalMessage}}"></textarea>
         <div class="control-panel flexbox-row-nowrap flex-justify-end">
-          <button class="btn btn-default" on-click="{{onEncrypt}}">Encrypt <span class="glyphicon glyphicon-arrow-right"></span></button>
+          <button class="btn btn-default" on-click="{{onEncrypt}}" disabled?="{{originalMessage.isEmpty}}">Encrypt <span class="glyphicon glyphicon-arrow-right"></span></button>
         </div>
       </div>
 
@@ -19,7 +38,7 @@
         <h4>Encrypted</h4>
         <textarea value="{{encryptedMessage}}" spellcheck="false"></textarea>
         <div class="control-panel flexbox-row-nowrap flex-justify-start">
-          <button class="btn btn-default" on-click="{{onDecrypt}}"><span class="glyphicon glyphicon-arrow-left"></span> Decrypt</button>
+          <button class="btn btn-default" on-click="{{onDecrypt}}" disabled?="{{encryptedMessage.isEmpty}}"><span class="glyphicon glyphicon-arrow-left"></span> Decrypt</button>
         </div>
       </div>
     </div>

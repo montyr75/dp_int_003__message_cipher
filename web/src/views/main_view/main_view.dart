@@ -9,6 +9,8 @@ typedef int AlterCodeUnit(int codeUnit);
 @CustomTag('main-view')
 class MainView extends PolymerElement {
 
+  static const CLASS_NAME = "MainView";
+
   @observable String originalMessage = "";
   @observable String encryptedMessage = "";
 
@@ -16,9 +18,9 @@ class MainView extends PolymerElement {
   MainView.created() : super.created();
 
   // other initialization can be done here
-  @override void enteredView() {
-    super.enteredView();
-    print("MainView::enteredView()");
+  @override void attached() {
+    super.attached();
+    print("$CLASS_NAME::attached()");
   }
 
   // algorithm used to encode one character
@@ -32,13 +34,13 @@ class MainView extends PolymerElement {
   }
 
   void onEncrypt(Event event, var detail, Element target) {
-    print("MainView::onEncrypt()");
+    print("$CLASS_NAME::onEncrypt()");
 
     encryptedMessage = alter(originalMessage, operation: encodeCodeUnit);
   }
 
   void onDecrypt(Event event, var detail, Element target) {
-    print("MainView::onDecrypt()");
+    print("$CLASS_NAME::onDecrypt()");
 
     originalMessage = alter(encryptedMessage, operation: decodeCodeUnit);
   }
