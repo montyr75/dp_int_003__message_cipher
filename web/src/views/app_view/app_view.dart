@@ -1,4 +1,4 @@
-library main_view;
+library app_view;
 
 import 'dart:html';
 import 'package:polymer/polymer.dart';
@@ -6,16 +6,16 @@ import 'package:polymer/polymer.dart';
 // define the signature for the encode/decode functions
 typedef int AlterCodeUnit(int codeUnit);
 
-@CustomTag('main-view')
-class MainView extends PolymerElement {
+@CustomTag('app-view')
+class AppView extends PolymerElement {
 
-  static const CLASS_NAME = "MainView";
+  static const CLASS_NAME = "AppView";
 
   @observable String originalMessage = "";
   @observable String encryptedMessage = "";
 
   // non-visual initialization can be done here
-  MainView.created() : super.created();
+  AppView.created() : super.created();
 
   // other initialization can be done here
   @override void attached() {
