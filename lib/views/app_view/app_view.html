@@ -1,7 +1,7 @@
-<link rel="import" href="packages/polymer/polymer.html">
-<link rel="import" href="packages/core_elements/core_header_panel.html">
-<link rel="import" href="packages/core_elements/core_toolbar.html">
-<link rel="import" href="packages/paper_elements/paper_icon_button.html">
+<link rel="import" href="../../../../packages/polymer/polymer.html">
+<link rel="import" href="../../../../packages/core_elements/core_header_panel.html">
+<link rel="import" href="../../../../packages/core_elements/core_toolbar.html">
+<link rel="import" href="../../../../packages/paper_elements/paper_icon_button.html">
 
 <polymer-element name="app-view">
   <template>
@@ -41,13 +41,13 @@
         <div class="box-container" layout vertical center>
           <h4>Original</h4>
           <textarea value="{{originalMessage}}"></textarea>
-          <paper-icon-button iconSrc="../../resources/images/lock.svg" on-tap="{{onEncrypt}}" disabled?="{{originalMessage.isEmpty}}"></paper-icon-button>
+          <paper-icon-button src="../../../../resources/images/lock.svg" on-tap="{{onEncrypt}}" disabled?="{{originalMessage.isEmpty}}"></paper-icon-button>
         </div>
 
         <div class="box-container" layout vertical center>
           <h4>Encrypted</h4>
           <textarea value="{{encryptedMessage}}" spellcheck="false"></textarea>
-          <paper-icon-button iconSrc="../../resources/images/unlock.svg" on-tap="{{onDecrypt}}" disabled?="{{encryptedMessage.isEmpty}}"></paper-icon-button>
+          <paper-icon-button src="../../../../resources/images/unlock.svg" on-tap="{{onDecrypt}}" disabled?="{{encryptedMessage.isEmpty}}"></paper-icon-button>
         </div>
       </div>
     </core-header-panel>
