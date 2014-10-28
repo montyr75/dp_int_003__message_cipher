@@ -2,6 +2,7 @@ library app_view;
 
 import 'dart:html';
 import 'package:polymer/polymer.dart';
+import '../../model/global.dart';
 
 // define the signature for the encode/decode functions
 typedef int AlterCodeUnit(int codeUnit);
@@ -9,7 +10,8 @@ typedef int AlterCodeUnit(int codeUnit);
 @CustomTag('app-view')
 class AppView extends PolymerElement {
 
-  static const CLASS_NAME = "AppView";
+  // initialize system log
+  bool _logInitialized = initLog();
 
   @observable String originalMessage = "";
   @observable String encryptedMessage = "";
@@ -20,7 +22,7 @@ class AppView extends PolymerElement {
   // other initialization can be done here
   @override void attached() {
     super.attached();
-    print("$CLASS_NAME::attached()");
+    log.info("$runtimeType::attached()");
   }
 
   // algorithm used to encode one character
@@ -34,13 +36,13 @@ class AppView extends PolymerElement {
   }
 
   void onEncrypt(Event event, var detail, Element target) {
-    print("$CLASS_NAME::onEncrypt()");
+    log.info("$runtimeType::onEncrypt()");
 
     encryptedMessage = alter(originalMessage, operation: encodeCodeUnit);
   }
 
   void onDecrypt(Event event, var detail, Element target) {
-    print("$CLASS_NAME::onDecrypt()");
+    log.info("$runtimeType::onDecrypt()");
 
     originalMessage = alter(encryptedMessage, operation: decodeCodeUnit);
   }
