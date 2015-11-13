@@ -9,6 +9,7 @@ import 'package:polymer_elements/paper_header_panel.dart';
 import 'package:polymer_elements/paper_toolbar.dart';
 import 'package:polymer_elements/paper_material.dart';
 import 'package:polymer_elements/paper_icon_button.dart';
+import 'package:polymer_elements/paper_textarea.dart';
 import 'package:polymer/polymer.dart';
 import 'package:web_components/web_components.dart' show HtmlImport;
 
