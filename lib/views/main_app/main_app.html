@@ -1,0 +1,67 @@
+<dom-module id="main-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        --paper-icon-button: {
+          cursor: default;
+          border: 2px solid darkgray;
+          border-radius: 50%;
+        };
+
+        --paper-icon-button-disabled: {
+          border-color: rgba(0, 0, 0, 0);
+        };
+      }
+
+      .card {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 5px;
+        width: 49%;
+      }
+
+      textarea {
+        height: 200px;
+        padding: 5px;
+        resize: none;
+        margin-bottom: 5px;
+      }
+
+      h4 {
+        margin-bottom: 5px;
+      }
+
+      .content {
+        padding: 10px;
+      }
+    </style>
+
+    <paper-header-panel class="fit">
+      <paper-toolbar class="layout horizontal center center-justified">
+        <h2>Message Cipher</h2>
+      </paper-toolbar>
+
+      <div class="fit layout horizontal start center-justified content">
+        <paper-material elevation="1" class="card layout vertical">
+          <h4>Original</h4>
+          <textarea value="{{originalMessage::input}}"></textarea>
+          <paper-icon-button src="[[encryptIconPath]]" on-tap="onEncrypt" disabled$="[[disableButton(originalMessage)]]"></paper-icon-button>
+        </paper-material>
+
+        <paper-material elevation="1" class="card layout vertical">
+          <h4>Encrypted</h4>
+          <textarea value="{{encryptedMessage::input}}" spellcheck="false"></textarea>
+          <paper-icon-button src="[[decryptIconPath]]" on-tap="onDecrypt" disabled$="[[disableButton(encryptedMessage)]]"></paper-icon-button>
+        </paper-material>
+      </div>
+    </paper-header-panel>
+  </template>
+</dom-module>
