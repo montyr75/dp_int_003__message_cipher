@@ -4,7 +4,7 @@ import 'package:logging/logging.dart';
 import 'package:intl/intl.dart' show DateFormat;
 
 // define logger
-final Logger log = new Logger('card_shuffler');
+final Logger log = new Logger('message_cipher');
 
 void initLog() {
   DateFormat dateFormatter = new DateFormat("H:m:s.S");
