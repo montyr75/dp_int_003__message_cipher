@@ -10,8 +10,9 @@ pubspec.lock
 .project
 .pub/
 .project
-.packages
 *.dart.js
 *.js_
 *.js.deps
 *.js.map
+.packages
+js/

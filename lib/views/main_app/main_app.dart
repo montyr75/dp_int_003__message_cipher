@@ -2,7 +2,6 @@
 library message_cipher.lib.main_app;
 
 import 'dart:html';
-import '../../model/global.dart';
 
 import 'package:polymer_elements/iron_flex_layout/classes/iron_flex_layout.dart';
 import 'package:polymer_elements/paper_header_panel.dart';
@@ -12,6 +11,8 @@ import 'package:polymer_elements/paper_icon_button.dart';
 import 'package:polymer_elements/paper_textarea.dart';
 import 'package:polymer/polymer.dart';
 import 'package:web_components/web_components.dart' show HtmlImport;
+
+import '../../services/logger.dart';
 
 // define the signature for the encode/decode functions
 typedef int AlterCodeUnit(int codeUnit);

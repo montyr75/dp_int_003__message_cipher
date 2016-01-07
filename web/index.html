@@ -1,17 +1,22 @@
 <!DOCTYPE html>
-
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>message_cipher</title>
-  </head>
+<head>
+  <title>Message Cipher</title>
 
-  <body unresolved class="fullbleed">
-    <main-app class="fit layout vertical"></main-app>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script type="application/dart" src="index.dart"></script>
-    <script src="packages/browser/dart.js"></script>
-  </body>
+  <script>
+    window.Polymer = window.Polymer || {};
+    window.Polymer.dom = 'shadow';
+  </script>
+</head>
+
+<body unresolved class="fullbleed">
+  <main-app class="fit layout vertical">Loading...</main-app>
+
+  <script src="index.dart" type="application/dart"></script>
+  <script src="packages/browser/dart.js"></script>
+</body>
 </html>
