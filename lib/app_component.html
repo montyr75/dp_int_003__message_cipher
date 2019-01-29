@@ -1,0 +1,30 @@
+<div class="fit layout vertical">
+  <header class="material-header">
+    <div class="material-header-row">
+      <span class="material-header-title">Message Cipher</span>
+    </div>
+  </header>
+
+  <div class="flex layout horizontal center-justified start">
+    <div class="mdc-card layout vertical">
+      <h4>Original</h4>
+      <textarea rows="10" [(ngModel)]="originalMessage" autofocus></textarea>
+      <div class="layout horizontal center end-justified">
+        <material-button icon (trigger)="onEncrypt()" [disabled]="originalMessage == null || originalMessage.isEmpty">
+          <img src="images/lock.svg">
+        </material-button>
+      </div>
+    </div>
+
+    <div class="mdc-card layout vertical">
+      <h4>Encrypted</h4>
+      <textarea rows="10" spellcheck="false" [(ngModel)]="encryptedMessage"></textarea>
+      <div class="layout horizontal center end-justified">
+        <material-button icon (trigger)="onDecrypt()" [disabled]="encryptedMessage == null || encryptedMessage.isEmpty">
+          <img src="images/unlock.svg">
+        </material-button>
+      </div>
+    </div>
+  </div>
+</div>
+

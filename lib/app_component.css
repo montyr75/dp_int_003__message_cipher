@@ -1,0 +1,22 @@
+:host {
+    /* This is equivalent of the 'body' selector of a page. */
+}
+
+.material-header-title {
+  left: 12px !important;
+}
+
+.mdc-card {
+  padding: 10px;
+  margin: 5px;
+  width: 49%;
+}
+
+h4 {
+  margin-bottom: 5px;
+}
+
+img {
+  width: 24px;
+  height: 24px;
+}
